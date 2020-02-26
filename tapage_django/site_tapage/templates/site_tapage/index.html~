@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Bienvenue sur l'seut !{% endblock %}
+{% block body-class %}other-page{% endblock %}
+{% block header %}Bienvenue sur l'seut !{% endblock %}
+{% block content %}
+	<div class="paragraphe-texte">{%for edito in edito_list %}
+	<h2>{{edito.titre}}</h2>
+	{{edito.contenu}}
+	{% endfor%}
+	</div>
+	<div>
+	<form action="{% url "index" %}" method="post">
+		{% csrf_token %}
+    	{{ form.as_p }}
+    	<input type="submit" value="Submit" />
+	</form>
+	</div>
+{% endblock %}
