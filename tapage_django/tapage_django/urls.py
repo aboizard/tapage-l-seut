@@ -20,6 +20,6 @@ import spirit.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('/', include('site_tapage.urls')),
+    url('', include('site_tapage.urls')),
     url(r'^forum/', include('spirit.urls')),
 ]
