@@ -46,3 +46,13 @@ def liens_utiles(request):
         envoi = True
 
     return render(request, 'site_tapage/liens_utiles.html', locals())
+
+
+def edition2017(request):
+    return render(request, 'site_tapage/edition2017.html', locals())
+
+def edition2018(request):
+    return render(request, 'site_tapage/edition2018.html', locals())
+
+def edition2019(request):
+    return render(request, 'site_tapage/edition2019.html', locals())
