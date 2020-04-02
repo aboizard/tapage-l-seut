@@ -1,3 +1,5 @@
+{% load static %}
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
    <head>
        <title>Edition 2017</title>
@@ -12,7 +14,7 @@
         <header>
                 <p> <h1>Edition 2017</h1> </p>
         </header>
-
+<!--
         <?php
         // Lit le fichier de menu dans un tableau.
         $lines = file('menu.txt');
@@ -22,6 +24,7 @@
             echo $line;
         }
         ?>
+ -->
 
 <div class="paragraphe-texte">
 <h3><b>Salut les Pommées-és! Chers festivaliers et festivalières !</b></h3>
@@ -47,7 +50,7 @@ Nous gardons votre contact pour vous informer de la suite des événements ! Et 
 			Jakez & the Jacks, blues Chicago style, 1er concert du samedi soir
 		</p>
 		<video controls width="100%">
-		<source src="./static/Jakez_and_the_Jacks.mp4" type="video/mp4">
+		<source src="{% static 'video/Jakez_and_the_Jacks.mp4' %}" type="video/mp4">
     	Votre navigateur n'est pas compatible avec le HTML 5, désolé.
 		</video>
 	</div>
