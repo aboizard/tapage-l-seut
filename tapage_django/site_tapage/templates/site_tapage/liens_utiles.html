@@ -5,6 +5,7 @@
 {% block header %}Liens Utiles{% endblock %}
 {% block content %}
 {% if envoi %}Votre lien a été rajouté !{% endif %}
+   <div class="paragraphe-texte"> Veuillez renseigner une catégorie pour le lien
 	<form action="{% url "liens_utiles" %}" method="post">
 	{% csrf_token %}
 		<div class="tableau-liens">
@@ -26,4 +27,5 @@
 
 		</div>
 	</form>
+   </div>
 {% endblock %}
