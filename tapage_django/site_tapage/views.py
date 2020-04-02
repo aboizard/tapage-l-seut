@@ -56,3 +56,6 @@ def edition2018(request):
 
 def edition2019(request):
     return render(request, 'site_tapage/edition2019.html', locals())
+
+def edition2020(request):
+    return render(request, 'site_tapage/edition2020.html', locals())

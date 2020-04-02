@@ -8,4 +8,5 @@ urlpatterns = [
     path('edition2017/', views.edition2017, name='edition2017'),
     path('edition2018/', views.edition2018, name='edition2018'),
     path('edition2019/', views.edition2019, name='edition2019'),
+    path('edition2020/', views.edition2020, name='edition2020'),
     ]
