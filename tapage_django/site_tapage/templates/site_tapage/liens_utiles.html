@@ -5,26 +5,25 @@
 {% block header %}Liens Utiles{% endblock %}
 {% block content %}
 {% if envoi %}Votre lien a été rajouté !{% endif %}
+	<form action="{% url "liens_utiles" %}" method="post">
+	{% csrf_token %}
+		<div class="tableau-liens">
+			<table>
+				<tr class="ligne1">
+					<th>Categorie</th>
+					<th>Description</th>
+					<th>Lien</th>
+				</tr>
+				<tr class="ligne0">
+					<td align="center">{{ form.categorie }}</td>
+					<td align="center">{{ form.description }}</td>
+					<td align="center">{{ form.url }}</td>
+				</tr>
+				<tr class="ligne1">
+					<td class="colonne_gauche" colspan="3" align="center"><input type="submit" value="Ajouter le lien"></td>
+				</tr>
+			</table>
 
-<form action="{% url "liens_utiles" %}" method="post">
-{% csrf_token %}
-<div class="tableau-liens">
-	<table>
-		<tr class="ligne1">
-			<th>Categorie</th>
-			<th>Description</th>
-			<th>Lien</th>
-		</tr>
-		<tr class="ligne0">
-			<td align="center">{{ form.categorie }}</td>
-			<td align="center">{{ form.description }}</td>
-			<td align="center">{{ form.url }}</td>
-		</tr>
-		<tr class="ligne1">
-			<td class="colonne_gauche" colspan="3" align="center"><input type="submit" value="Ajouter le lien"></td>
-		</tr>
-	</table>
-
-</div>
-</form>
+		</div>
+	</form>
 {% endblock %}

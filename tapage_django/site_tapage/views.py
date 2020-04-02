@@ -48,6 +48,9 @@ def liens_utiles(request):
     return render(request, 'site_tapage/liens_utiles.html', locals())
 
 
+def photos(request):
+    return render(request, 'site_tapage/photos.html', locals())
+
 def edition2017(request):
     return render(request, 'site_tapage/edition2017.html', locals())
 
@@ -57,5 +60,3 @@ def edition2018(request):
 def edition2019(request):
     return render(request, 'site_tapage/edition2019.html', locals())
 
-def edition2020(request):
-    return render(request, 'site_tapage/edition2020.html', locals())
