@@ -2,6 +2,8 @@ from django.shortcuts import render
 from datetime import datetime
 from site_tapage.models import Edito
 from .forms import ContactForm, LiensUtiles, EditoForm
+import os
+from django.conf import settings
 # Create your views here.
 
 def index(request):
@@ -21,19 +23,19 @@ def contact(request):
     # à la page.
     form = ContactForm(request.POST or None)
     # Nous vérifions que les données envoyées sont valides
-    # Cette méthode renvoie False s'il n'y a pas de données 
+    # Cette méthode renvoie False s'il n'y a pas de données
     # dans le formulaire ou qu'il contient des erreurs.
-    if form.is_valid(): 
+    if form.is_valid():
         # Ici nous pouvons traiter les données du formulaire
         sujet = form.cleaned_data['sujet']
         message = form.cleaned_data['message']
         envoyeur = form.cleaned_data['envoyeur']
         renvoi = form.cleaned_data['renvoi']
 
-        # Nous pourrions ici envoyer l'e-mail grâce aux données 
+        # Nous pourrions ici envoyer l'e-mail grâce aux données
         # que nous venons de récupérer
         envoi = True
-    
+
     # Quoiqu'il arrive, on affiche la page du formulaire.
     return render(request, 'site_tapage/contact.html', locals())
 
@@ -49,7 +51,9 @@ def liens_utiles(request):
 
 
 def photos(request):
-    return render(request, 'site_tapage/photos.html', locals())
+    imgs = os.listdir(os.path.join(settings.STATIC_ROOT, "site_tapage/photos"))
+    context = {"imgs" : imgs}
+    return render(request, 'site_tapage/photos.html', locals(), context)
 
 def edition2017(request):
     return render(request, 'site_tapage/edition2017.html', locals())
@@ -59,4 +63,3 @@ def edition2018(request):
 
 def edition2019(request):
     return render(request, 'site_tapage/edition2019.html', locals())
-
