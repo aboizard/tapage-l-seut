@@ -1,10 +1,9 @@
-from django.shortcuts import render
+import os
 from datetime import datetime
 from site_tapage.models import Edito
 from .forms import ContactForm, LiensUtiles, EditoForm
-import os
+from django.shortcuts import render
 from django.conf import settings
-# Create your views here.
 
 def index(request):
     edito_list = Edito.objects.order_by('-date')
@@ -23,19 +22,19 @@ def contact(request):
     # à la page.
     form = ContactForm(request.POST or None)
     # Nous vérifions que les données envoyées sont valides
-    # Cette méthode renvoie False s'il n'y a pas de données
+    # Cette méthode renvoie False s'il n'y a pas de données 
     # dans le formulaire ou qu'il contient des erreurs.
-    if form.is_valid():
+    if form.is_valid(): 
         # Ici nous pouvons traiter les données du formulaire
         sujet = form.cleaned_data['sujet']
         message = form.cleaned_data['message']
         envoyeur = form.cleaned_data['envoyeur']
         renvoi = form.cleaned_data['renvoi']
 
-        # Nous pourrions ici envoyer l'e-mail grâce aux données
+        # Nous pourrions ici envoyer l'e-mail grâce aux données 
         # que nous venons de récupérer
         envoi = True
-
+    
     # Quoiqu'il arrive, on affiche la page du formulaire.
     return render(request, 'site_tapage/contact.html', locals())
 
@@ -51,9 +50,12 @@ def liens_utiles(request):
 
 
 def photos(request):
-    imgs = os.listdir(os.path.join(settings.STATIC_ROOT, "site_tapage/photos"))
-    context = {"imgs" : imgs}
-    return render(request, 'site_tapage/photos.html', locals(), context)
+    path = settings.STATICFILES_MAIN_DIR
+    img_list_2017 = os.listdir(path + '/img/photos/2017')
+    img_list_2018 = os.listdir(path + '/img/photos/2018')
+    img_list_2019 = os.listdir(path + '/img/photos/2019')
+    context = {'images_2017' : img_list_2017,'images_2018' : img_list_2018,'images_2019' : img_list_2019,}
+    return render(request, "site_tapage/photos.html", context)
 
 def edition2017(request):
     return render(request, 'site_tapage/edition2017.html', locals())
@@ -63,3 +65,4 @@ def edition2018(request):
 
 def edition2019(request):
     return render(request, 'site_tapage/edition2019.html', locals())
+

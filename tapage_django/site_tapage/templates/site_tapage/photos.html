@@ -4,66 +4,34 @@
 {% block body-class %}other-page{% endblock %}
 {% block header %}Galerie Photos{% endblock %}
 {% block content %}
-<div class="contenu">
-  {% for img in imgs %}
-  <div class="miniature">
-     <a href="/static/site_tapage/photos/{{ img }}"> <img src="/static/site_tapage/photos/{{ img }}" width="304" height="236"/>
-     </a>
-  </div>
-  {% endfor %}
-</div>
-
-	<!--
-	<script src="../Light/lightbox.js" type="text/javascript"></script>
-	<script>
-	    var lightbox = new Lightbox();
-	    lightbox.load({
-	        boxId: false,
-	        dimensions: true,
-	        captions: true,
-	        prevImg: false,
-	        nextImg: false,
-	        hideCloseBtn: false,
-	        closeOnClick: true,
-	        loadingAnimation: 200,
-	        animElCount: 4,
-	        preload: true,
-	        carousel: true,
-	        animation: 400,
-	        nextOnClick: true,
-	        responsive: true,
-	        maxImgSize: 0.8,
-	        // callbacks
-	        onopen: function (image) {
-	            // your code goes here
-	            console.log(onopen, image)
-	        },
-	        onclose: function (image) {
-	            // your code goes here
-	            console.log(onclose, image)
-	        },
-	        onload: function (event) {
-	            // your code goes here
-	            console.log(onload, event)
-	        },
-	        onresize: function (image) {
-	            // your code goes here
-	            console.log(onresize, image)
-	        },
-	        onloaderror: function (event) {
-	            // your code goes here
-	            console.log(onloaderror, event)
-	            // just display next or prev picture on error
-	            if (event._happenedWhile === prev)
-	                lightbox.prev()
-	            else
-	                lightbox.next()
-	        },
-	        onimageclick: function (image) {
-	            // your code goes here
-	            console.log(Image clicked!, image)
-	        }
-	    });
-	</script>
-	 -->
+	{% if images_2019 %}
+		<div class="paragraphe-texte"> 2019</div>
+		{% for image in images_2019 %}
+            <div class="miniature">
+                <a href="/static/img/photos/2019/{{ image }}"><img src="/static/img/photos/2019/{{ image }}" alt="{{ image }}" style="width:150px"></a>
+           </div>
+		{% endfor %}
+	{% else %}
+		<p>No image available.</p>
+	{% endif %}
+	{% if images_2018 %}
+		<div class="paragraphe-texte"> 2018</div>
+		{% for image in images_2018 %}
+            <div class="miniature">
+                <a href="/static/img/photos/2018/{{ image }}"><img src="/static/img/photos/2018/{{ image }}" alt="{{ image }}" style="width:150px"></a>
+           </div>
+		{% endfor %}
+	{% else %}
+		<p>No image available.</p>
+	{% endif %}
+	{% if images_2017 %}
+		<div class="paragraphe-texte"> 2017</div>
+		{% for image in images_2017 %}
+            <div class="miniature">
+                <a href="/static/img/photos/2017/{{ image }}"><img src="/static/img/photos/2017/{{ image }}" alt="{{ image }}" style="width:150px"></a>
+           </div>
+		{% endfor %}
+	{% else %}
+		<p>No image available.</p>
+	{% endif %}
 {% endblock %}

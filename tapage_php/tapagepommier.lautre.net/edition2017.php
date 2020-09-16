@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+   <head>
+       <title>Edition 2017</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="stylesheet.css" />
+        <style type="text/css">
+       <a img { border:0; }/>
+       </style>
+   </head>
+   <body class="other-page">
+        <header>
+                <p> <h1>Edition 2017</h1> </p>
+        </header>
+
+        <?php
+        // Lit le fichier de menu dans un tableau.
+        $lines = file('menu.txt');
+
+        // lit les lignes du tableaucd
+        foreach ($lines as $line_num => $line) {
+            echo $line;
+        }
+        ?>
+
+<div class="paragraphe-texte">
+<h3><b>Salut les Pommées-és! Chers festivaliers et festivalières !</b></h3>
+
+	<p>Toute l'équipe tient à vous remercier de votre présence et de votre participation lors de ce formidable Tapage. Nous sommes très heureux d'avoir pu réunir tout plein de gens des 4 coins de la France pour cet événement.  <br>Votre soutien, de quelque manière dont il a pu s’exprimer a été nécessaire pour aller au bout de cette aventure. Nous voulons transmettre un remerciement spécial, aux artistes,  à ceux qui ont préparé des ateliers, à ceux qui nous ont prêté du matériel, à ceux qui nous ont donné du temps avant le festival, à ceux qui sont restés pour ranger, à ceux qui ont fait à manger, à ceux qui ont mangé, à ceux qui sont resté au bar, à ceux qui ont bu, à ceux qui ont fait des dons, à tout le monde en fait sans qui le Tapage n'aurait pas aussi bien sonné!</p>
+
+	<p>Nous tenions réellement à vous le dire car, même si nous pensons que cet événement à été un succès à tout les points de vue, le temps du bilan est venu. Nous vous invitons tous à nous faire part de vos remarques, observations, votre soutien, vos envies, sur ce fameux Tapage, quelque soit votre implication, à l’adresse de l’association : tapagesouslespommiers@ntymail.com.</p>
+
+   <p>Nous partons aussi en quête des photos/vidéos prisent pendant ce festival absolument merveilleux. Pour partager nos souvenirs, rigoler un bon coup et même pour ceux qui veulent, en télécharger quelques unes pour ce faire un petit album perso, l'adresse du site est tapage-sous-les-pommiers.fr.
+   <br>Alors si vous avez pris des photos ou vidéos pendant le festival,et que vous voulez bien qu'elles soient disponibles sur le site internet, vous pouvez les envoyer  par mail ou WeTransfer à l’adresse mail du web master (gabriel.lahellec@gmail.com). Cela serait très gentil de les classer en fonction du jour où elles ont été prises (si possible sinon tant pis !), (c'est à dire semaine de préparation, vendredi soir, samedi ou dimanche).
+PNG ou JPEG svp!</p>
+
+    <p>Encore un grand MERCI à tout le monde, au-delà des grands coup de mains, votre soutien nous a aussi fait beaucoup de bien.
+Nous gardons votre contact pour vous informer de la suite des événements ! Et il y en aura !</p>
+
+<h3 align="center"><b>Topette !</b></h3>
+</div>
+
+<div class="paragraphe" title="Retour en image">
+<h3>Quelques vidéos</h3>
+	<div class="video">
+		<p align="center">
+			Jakez & the Jacks, blues Chicago style, 1er concert du samedi soir
+		</p>
+		<video controls width="100%">
+		<source src="./static/Jakez_and_the_Jacks.mp4" type="video/mp4">
+    	Votre navigateur n'est pas compatible avec le HTML 5, désolé.
+		</video>
+	</div>
+
+	<div class="video">
+		<p align="center">
+			Intermède thêtre d'ombre par la Tribe
+		</p>
+		<video controls width="100%">
+			<source src="./static/theatre_ombre.mp4" type="video/mp4">
+    		Votre navigateur n'est pas compatible avec le HTML 5, désolé.
+		</video>
+	</div>
+</div>
+</html>
